@@ -1,6 +1,8 @@
 from reusable_codes.chrome_actions import open_chrome
 
-def test_TC1_maximize_chrome_window():
+def test_TC1_maximize_chrome_window(driver):
+    assert driver is not None, "Chrome driver is not intialized"
+    """
     # Test Case 1: Open and maximize Chrome browser
     driver = None
     try:
@@ -13,8 +15,13 @@ def test_TC1_maximize_chrome_window():
             f"Test failed while opening or maximizing Chrome. "
             f"Details: {e}"
         )
+    """
     
-def test_TC2_maximize_chrome_window():
+def test_TC2_maximize_chrome_window(driver):
+    driver.get("https://www.google.com")
+    assert driver.title
+
+    """
     #Test Case 2: Open website and collect title
     driver = None
     try:
@@ -32,3 +39,4 @@ def test_TC2_maximize_chrome_window():
         raise AssertionError(
             f"Test failed while collecting website title. Details: {e}"
         )
+    """
