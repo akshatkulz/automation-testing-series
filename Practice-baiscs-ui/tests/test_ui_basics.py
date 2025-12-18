@@ -1,3 +1,7 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from reusable_codes.chrome_actions import open_chrome
 
 def test_TC1_maximize_chrome_window(driver):
@@ -40,3 +44,24 @@ def test_TC2_maximize_chrome_window(driver):
             f"Test failed while collecting website title. Details: {e}"
         )
     """
+
+def test_google_search_title(driver):
+    """
+    Day 4 TC: Search in Google and validate title
+    """
+    driver.get("https://www.google.com")
+
+    wait = WebDriverWait(driver, 10)
+
+    # Wait for search box to be visible
+    search_box = wait.until(
+        EC.visibility_of_element_located((By.NAME, "q"))
+    )
+
+    search_box.send_keys("Selenium Python")
+    search_box.submit()
+
+    # Wait until title changes
+    wait.until(EC.title_contains("Selenium"))
+
+    assert "Selenium" in driver.title, "Search result page not loaded"
