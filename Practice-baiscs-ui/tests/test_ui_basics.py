@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from reusable_codes.chrome_actions import open_chrome
+from pages.google_page import GooglePage
+
 
 def test_TC1_maximize_chrome_window(driver):
     assert driver is not None, "Chrome driver is not intialized"
@@ -65,3 +67,14 @@ def test_google_search_title(driver):
     wait.until(EC.title_contains("Selenium"))
 
     assert "Selenium" in driver.title, "Search result page not loaded"
+
+    def test_google_search_using_pom(driver):
+        """
+        Day 5 TC: Google search using Page Object Model
+        """
+        google_page = GooglePage(driver)
+
+        google_page.open()
+        google_page.search("Selenium Python")
+
+        assert "Selenium" in google_page.get_title(), "Search failed"
