@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from reusable_codes.chrome_actions import open_chrome
 from pages.google_page import GooglePage
+from reusable_codes.logger import get_logger
 
 
 def test_TC1_maximize_chrome_window(driver):
@@ -78,3 +79,21 @@ def test_google_search_title(driver):
         google_page.search("Selenium Python")
 
         assert "Selenium" in google_page.get_title(), "Search failed"
+#Day 6
+logger = get_logger(__name__)
+def test_google_search_using_pom(driver):
+        """
+        Day 6 TC: Google search using Page Object Model and logging storing screenshots
+        """
+        logger.info("Opening Google page")
+
+        google_page = GooglePage(driver)
+        google_page.open()
+
+        logger.info("Searching for Selenium Python")
+        google_page.search("Selenium Python")
+
+        title = google_page.get_title()
+        logger.info(f"Page title after search: {title}")
+
+        assert "Selenium" in title, "Search result title mismatch"
