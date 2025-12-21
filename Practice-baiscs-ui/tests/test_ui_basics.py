@@ -97,3 +97,4 @@ def test_google_search_using_pom(driver):
         logger.info(f"Page title after search: {title}")
 
         assert "Selenium" in title, "Search result title mismatch"
+#random

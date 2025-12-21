@@ -1,3 +1,6 @@
 2025-12-20 22:33:27,042 - INFO - tests.test_ui_basics - Opening Google page
 2025-12-20 22:33:28,451 - INFO - tests.test_ui_basics - Searching for Selenium Python
 2025-12-20 22:33:29,674 - INFO - tests.test_ui_basics - Page title after search: https://www.google.com/search?q=Selenium+Python&sca_esv=709dfd0b212bea1b&source=hp&ei=4NZGabXiCZmNnesPjp_JmQU&iflsig=AOw8s4IAAAAAaUbk8EGhifZa4AGUFOg_dXN3sWXMWTgW&sei=4NZGaYq7MfORvr0PgbGC-A8
+2025-12-20 23:10:02,271 - INFO - tests.test_ui_basics - Opening Google page
+2025-12-20 23:10:02,802 - INFO - tests.test_ui_basics - Searching for Selenium Python
+2025-12-20 23:10:04,160 - INFO - tests.test_ui_basics - Page title after search: https://www.google.com/search?q=Selenium+Python&sca_esv=709dfd0b212bea1b&source=hp&ei=ct9GaaurI4SaseMP-c_CoAQ&iflsig=AOw8s4IAAAAAaUbtgscUQE-meCh6R5fYhZHpKGSeWkRG&sei=c99GaZjMDYXk1e8PxISCyA0
